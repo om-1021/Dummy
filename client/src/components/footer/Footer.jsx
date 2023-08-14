@@ -14,22 +14,8 @@ function Footer() {
             <span>Video & Animation</span>
             <span>Music & Audio</span>
             <span>Programming & Tech</span>
-            <span>Data</span>
-            <span>Business</span>
-            <span>Lifestyle</span>
-            <span>Photography</span>
-            <span>Sitemap</span>
           </div>
-          <div className="item">
-            <h2>About</h2>
-            <span>Press & News</span>
-            <span>Partnerships</span>
-            <span>Privacy Policy</span>
-            <span>Terms of Service</span>
-            <span>Intellectual Property Claims</span>
-            <span>Investor Relations</span>
-            <span>Contact Sales</span>
-          </div>
+
           <div className="item">
             <h2>Support</h2>
             <span>Help & Support</span>
@@ -44,25 +30,7 @@ function Footer() {
             <span>Forum</span>
             <span>Events</span>
             <span>Blog</span>
-            <span>Influencers</span>
-            <span>Affiliates</span>
-            <span>Podcast</span>
-            <span>Invite a Friend</span>
-            <span>Become a Seller</span>
-            <span>Community Standards</span>
-          </div>
-          <div className="item">
-            <h2>More From Gigster</h2>
-            <span>Gigster Business</span>
-            <span>Gigster Pro</span>
-            <span>Gigster Logo Maker</span>
-            <span>Gigster Guides</span>
-            <span>Get Inspired</span>
-            <span>Liverr Select</span>
-            <span>ClearVoice</span>
-            <span>Gigster Workspace</span>
-            <span>Learn</span>
-            <span>Working Not Working</span>
+            
           </div>
         </div>
         <hr />
@@ -76,18 +44,8 @@ function Footer() {
               <img src="/img/twitter.png" alt="" />
               <img src="/img/facebook.png" alt="" />
               <img src="/img/linkedin.png" alt="" />
-              <img src="/img/pinterest.png" alt="" />
               <img src="/img/instagram.png" alt="" />
             </div>
-            <div className="link">
-              <img src="/img/language.png" alt="" />
-              <span>English</span>
-            </div>
-            <div className="link">
-              <img src="/img/coin.png" alt="" />
-              <span>USD</span>
-            </div>
-            <img src="/img/accessibility.png" alt="" />
           </div>
         </div>
       </div>

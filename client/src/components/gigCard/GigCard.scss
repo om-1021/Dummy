@@ -4,6 +4,7 @@
   // border: 1px solid rgb(237, 236, 236);
   border: 1px solid rgb(228, 228, 228);
   margin-bottom: 40px;
+  color: #f8efe5;
 
   img {
     width: 100%;
@@ -28,13 +29,10 @@
         border-radius: 50%;
         object-fit: cover;
       }
-
-      // span {
-      // }
     }
 
     p {
-      color: #111;
+      color: #f8efe5;
     }
 
     .star {
@@ -75,12 +73,12 @@
 
     .price {
       span {
-        color: #999;
+        color: #f8efe5;
         font-size: 12px;
       }
 
       h2 {
-        color: #555;
+        color: #f8efe5;
         font-size: 18px;
         font-weight: 400;
         text-align: end;
