@@ -43,8 +43,10 @@ function Gigs() {
   return (
     <div className="gigs">
       <div className="container">
-        <span className="breadcrumbs">Liverr  Graphics & Design </span>
-        <h1>AI Artists</h1>
+        <span className="breadcrumbs">Gigster Graphics & Design </span>
+        <h1>AI Artists  </h1>
+     
+
         <p>
           Explore the boundaries of art and technology with Liverr's AI artists
         </p>

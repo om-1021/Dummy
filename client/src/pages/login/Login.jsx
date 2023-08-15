@@ -10,10 +10,8 @@ function Login() {
 
   const navigate = useNavigate();
 
-  // Function to handle guest login
   const handleGuestLogin = async () => {
     try {
-      // Replace 'guestUsername' and 'guestPassword' with your existing guest user's credentials
       setUsername("user1");
       setPassword("user1");
     } catch (err) {
@@ -41,7 +39,7 @@ function Login() {
           name="username"
           type="text"
           placeholder="johndoe"
-          value={username} // Use 'value' prop to set the input value
+          value={username} 
           onChange={(e) => setUsername(e.target.value)}
         />
 
@@ -49,7 +47,7 @@ function Login() {
         <input
           name="password"
           type="password"
-          value={password} // Use 'value' prop to set the input value
+          value={password} 
           onChange={(e) => setPassword(e.target.value)}
         />
         <button type="submit">Login</button>

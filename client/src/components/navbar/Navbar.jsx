@@ -44,10 +44,6 @@ function Navbar() {
           <span className="dot">.</span>
         </div>
         <div className="links">
-          <span>Gigster Business</span>
-          <span>Explore</span>
-          <span>English</span>
-          {!currentUser?.isSeller && <span>Become a Seller</span>}
           {currentUser ? (
             <div className="user" onClick={() => setOpen(!open)}>
               <img src={currentUser.img || "/img/noavatar.png"} alt="" />
@@ -78,7 +74,9 @@ function Navbar() {
             </div>
           ) : (
             <>
-              <Link to="/login" className="link">Sign in</Link>
+              <Link to="/login" className="link">
+                Sign in
+              </Link>
               <Link className="link" to="/register">
                 <button>Join</button>
               </Link>
@@ -90,32 +88,59 @@ function Navbar() {
         <>
           <hr />
           <div className="menu">
-            <Link className="link menuLink" to="/">
-              Graphics & Design
+            <Link
+              className="link menuLink"
+              to="/gigs?cat=design"
+              onClick={() => {
+                refetch();
+              }}
+            >
+              Design
             </Link>
-            <Link className="link menuLink" to="/">
-              Video & Animation
+            <Link
+              className="link menuLink"
+              to="/gigs?cat=animation"
+              onClick={() => {
+                refetch();
+              }}
+            >
+              Animation
             </Link>
-            <Link className="link menuLink" to="/">
+            <Link
+              className="link menuLink"
+              to="/gigs?cat=writing"
+              onClick={() => {
+                refetch();
+              }}
+            >
               Writing & Translation
             </Link>
-            <Link className="link menuLink" to="/">
+            <Link
+              className="link menuLink"
+              to="/gigs?cat=ai"
+              onClick={() => {
+                refetch();
+              }}
+            >
               AI Services
             </Link>
-            <Link className="link menuLink" to="/">
-              Digital Marketing
+            <Link
+              className="link menuLink"
+              to="/gigs?cat=web"
+              onClick={() => {
+                refetch();
+              }}
+            >
+              Web Development
             </Link>
-            <Link className="link menuLink" to="/">
-              Music & Audio
-            </Link>
-            <Link className="link menuLink" to="/">
-              Programming & Tech
-            </Link>
-            <Link className="link menuLink" to="/">
-              Business
-            </Link>
-            <Link className="link menuLink" to="/">
-              Lifestyle
+            <Link
+              className="link menuLink"
+              to="/gigs?cat=photography"
+              onClick={() => {
+                refetch();
+              }}
+            >
+              Photography
             </Link>
           </div>
           <hr />
