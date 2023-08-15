@@ -1,6 +1,9 @@
 .messages {
   display: flex;
   justify-content: center;
+  background-color: black;
+  color: white;
+  padding: 50px 0;
 
   .container {
     width: 1400px;
@@ -9,9 +12,10 @@
     .title {
       display: flex;
       justify-content: space-between;
+      color: white;
 
       button {
-        background-color: #1dbf73;
+        background-color: #ff4533;
         color: white;
         font-weight: 500;
         border: none;
@@ -34,7 +38,7 @@
           &:first-child {
             font-weight: 500;
           }
-          
+
           &:nth-child(2),
           &:nth-child(3) {
             color: gray;
@@ -42,7 +46,7 @@
         }
 
         button {
-          background-color: #1dbf73;
+          background-color: #ff4533;
           color: white;
           padding: 10px;
           border: none;
@@ -50,7 +54,7 @@
         }
 
         &.active {
-          background-color: #1dbf730f;
+          background-color: rgb(37, 37, 37);
         }
       }
     }

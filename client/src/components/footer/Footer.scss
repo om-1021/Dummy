@@ -2,7 +2,8 @@
   display: flex;
   justify-content: center;
   color: #666;
-  margin: 50px 0px;
+  padding: 50px 0;
+  background-color: black;
 
   img {
     width: 24px;
@@ -10,10 +11,14 @@
   }
 
   .container {
-    width: 1400px;
+    width: 1450px;
+    margin: 0 80px;
+    padding: 30px 0;
+    border-radius: 60px;
+    background-color: #fef2e7;
     .top {
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
       .item {
         display: flex;
         flex-direction: column;
@@ -37,9 +42,9 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      margin: 0 180px;
 
       .left {
-        width: max-content;
         display: flex;
         align-items: center;
         gap: 20px;
@@ -58,12 +63,6 @@
         .social {
           display: flex;
           gap: 20px;
-        }
-
-        .link {
-          display: flex;
-          align-items: center;
-          gap: 10px;
         }
       }
     }

@@ -1,7 +1,9 @@
 .orders {
   display: flex;
   justify-content: center;
-  color: #555;
+  background-color: black;
+  color: white;
+  padding: 50px 0;
 
   .container {
     width: 1400px;
@@ -12,8 +14,8 @@
       justify-content: space-between;
 
       button {
-        background-color: #1dbf73;
-        color: white;
+        background-color: #ff4533;
+        color: #e6c1a1;
         font-weight: 500;
         border: none;
         padding: 10px;
@@ -30,8 +32,8 @@
           text-align: left;
         }
         td {
-          
-          sup{
+          border: none;
+          sup {
             font-size: 12px;
           }
 
@@ -47,7 +49,7 @@
           }
         }
         &:nth-child(even) {
-          background-color: #1dbf730f;
+          background-color: rgb(22, 22, 22);
         }
       }
     }

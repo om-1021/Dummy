@@ -1,6 +1,7 @@
 .home {
+  background-color: black;
   .features {
-    background-color: #f1fdf7;
+    background-color: black;
     display: flex;
     justify-content: center;
     padding: 100px 0px;
@@ -9,7 +10,7 @@
       background-color: #0d084d;
 
       h1 {
-        color: white !important;
+        color: #f8efe5 !important;
       }
 
       i {
@@ -18,19 +19,19 @@
 
       p {
         margin-bottom: 20px;
-        color: white !important;
+        color: #f8efe5 !important;
       }
 
       .title {
-        color: white !important;
+        color: #f8efe5 !important;
         font-weight: 300 !important;
         font-size: 14px !important;
       }
 
       button {
-        background-color: #1dbf73;
+        background-color: #ff4533;
         border: none;
-        color: white;
+        color: #f8efe5;
         padding: 10px 20px;
         border-radius: 5px;
         width: max-content;
@@ -54,14 +55,18 @@
         }
         &:last-child {
           flex: 3;
+          margin-top: 80px;
         }
 
-        img{
+        img {
           width: 100%;
+          margin-right: 20px;
         }
         h1 {
           font-weight: 500;
           margin-bottom: 10px;
+          color: #f8efe5;
+          margin-bottom: 80px;
         }
         .title {
           display: flex;
@@ -69,7 +74,8 @@
           gap: 10px;
           font-weight: 500;
           font-size: 18px;
-          color: #666;
+          color: #f8efe5;
+          margin-bottom: 20px;
           img {
             width: 24px;
             height: 24px;
@@ -81,9 +87,10 @@
           color: gray;
           line-height: 28px;
           letter-spacing: 1px;
+          margin-bottom: 20px;
         }
 
-        video{
+        video {
           width: 720px;
         }
       }
@@ -101,13 +108,14 @@
   .explore {
     display: flex;
     justify-content: center;
-    padding: 100px 0px;
-
+    padding-bottom: 100px;
+    padding-top: 50px;
     .container {
       width: 1400px;
 
-      h1{
-        color: #555;
+      h1 {
+        color: #f8efe5;
+        margin-bottom: 30px;
       }
 
       .items {
@@ -132,25 +140,34 @@
             height: 50px;
           }
 
-          .line{
+          .line {
             width: 50px;
             height: 2px;
             background-color: lightgray;
-            transition: all .3s ease;
+            transition: all 0.3s ease;
           }
 
           span {
             font-weight: 300;
+            color: #f8efe5;
           }
 
-          &:hover{
-            .line{
+          &:hover {
+            .line {
               width: 80px;
-              background-color: #1dbf73;
+              background-color: #ff4533;
             }
           }
         }
       }
+    }
+  }
+  .client-F {
+    padding-top: 50px;
+    width: 1400px;
+    margin: auto;
+    h1 {
+      color: #f8efe5;
     }
   }
 }

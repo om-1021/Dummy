@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #013914;
+  background-color: black;
   color: white;
   position: sticky;
   top: 0;
@@ -10,13 +10,13 @@
   transition: 0.5s all ease;
 
   &.active {
-    background-color: white;
-    color: black;
+    background-color: black;
+    color: white;
 
     button {
-      background-color: white !important;
-      color: #1dbf73 !important;
-      border: 1px solid #1dbf73 !important;
+      background-color: white;
+      color: #ff4533 !important;
+      border: 1px solid #ff4533 !important;
     }
   }
 
@@ -31,12 +31,9 @@
       font-size: 34px;
       font-weight: bold;
 
-      .text {
-      }
-
       .dot {
         font-weight: bold;
-        color: #1dbf73;
+        color: #ff4533;
       }
     }
     .links {
@@ -83,7 +80,7 @@
       }
 
       button {
-        color: white;
+        color: black;
         padding: 10px 20px;
         border-radius: 5px;
         border: 1px solid white;
@@ -91,8 +88,8 @@
         cursor: pointer;
 
         &:hover {
-          background-color: #1dbf73;
-          border-color: #1dbf73;
+          background-color:white;
+          border-color: red;
         }
       }
     }
