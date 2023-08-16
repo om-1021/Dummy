@@ -4,17 +4,6 @@ import "./Register.scss";
 import newRequest from "../../utils/newRequest";
 import { useNavigate } from "react-router-dom";
 
-// const handleSendEmail = async () => {
-//   try {
-//     await newRequest.post("/send/send-email", {
-//       to: "omdubey737683r@gmail.com",
-//     });
-//     console.log("Email sent successfully");
-//   } catch (error) {
-//     console.error("Error sending email", error);
-//   }
-// };
-
 function Register() {
   const [file, setFile] = useState(null);
   const [user, setUser] = useState({
@@ -69,6 +58,22 @@ function Register() {
       console.error("Error sending email", error);
     }
   };
+  // const verifyOTP = async () => {
+  //   try {
+  //     const response = await newRequest.post("/send/verify-otp", {
+  //       otp: enteredOTP,
+  //     });
+
+  //     if (response.status === 200) {
+  //       setVerificationStatus("verified");
+  //     } else {
+  //       setVerificationStatus("wrong otp");
+  //     }
+  //   } catch (err) {
+  //     console.error(err);
+  //     setVerificationStatus("wrong otp");
+  //   }
+  // };
   const verifyOTP = async () => {
     try {
       const response = await newRequest.post("/send/verify-otp", {
@@ -77,55 +82,66 @@ function Register() {
 
       if (response.status === 200) {
         setVerificationStatus("verified");
+        document
+          .querySelector('input[name="otp"]')
+          .classList.add("no-error-border");
       } else {
         setVerificationStatus("wrong otp");
+
+        // Add this line to add a red border to the input field
+        document
+          .querySelector('input[name="otp"]')
+          .classList.add("error-border");
       }
     } catch (err) {
       console.error(err);
       setVerificationStatus("wrong otp");
+
+      // Add this line to add a red border to the input field
+      document.querySelector('input[name="otp"]').classList.add("error-border");
     }
   };
+
   return (
     <div className="register">
       <form onSubmit={handleSubmit}>
         <div className="left">
           <h1>Create a new account</h1>
           <label htmlFor="">Username</label>
-          <input
-            name="username"
-            type="text"
-            placeholder="johndoe"
-            onChange={handleChange}
-          />
+          <input name="username" type="text" onChange={handleChange} />
           <label htmlFor="">Email</label>
+          <input name="email" type="email" onChange={handleChange} />
+          <button type="button" onClick={handleSendEmail}>
+            Send Otp
+          </button>
+          <label htmlFor="">Otp</label>
           <input
-            name="email"
-            type="email"
-            placeholder="email"
-            onChange={handleChange}
-          />
-          <button type="button" onClick={handleSendEmail}>Send Otp</button>
-          <input
-            name="email"
+            name="otp"
             type="number"
-            placeholder="otp"
-            onChange={(e)=>setEnteredOTP(e.target.value)}
+            onChange={(e) => setEnteredOTP(e.target.value)}
           />
-          
-          <button type="button" onClick={verifyOTP}>
-            {verificationStatus === "verified" ? "Verified" : "Verify"}
+
+          <button
+            type="button"
+            onClick={verifyOTP}
+            className={
+              verificationStatus === "verified"
+                ? "verified-button" // Define a CSS class for verified button style
+                : ""
+            }
+          >
+            {verificationStatus === "verified"
+              ? "Verified"
+              : verificationStatus === "wrong otp"
+              ? "Wrong Otp"
+              : "Verify"}
           </button>
           <label htmlFor="">Password</label>
           <input name="password" type="password" onChange={handleChange} />
           <label htmlFor="">Profile Picture</label>
           <input type="file" onChange={(e) => setFile(e.target.files[0])} />
           <label htmlFor="">Country</label>
-          <input
-            name="country"
-            type="text"
-            placeholder="India"
-            onChange={handleChange}
-          />
+          <input name="country" type="text" onChange={handleChange} />
           <button type="submit">Register</button>
         </div>
         <div className="right">
@@ -138,15 +154,9 @@ function Register() {
             </label>
           </div>
           <label htmlFor="">Phone Number</label>
-          <input
-            name="phone"
-            type="text"
-            placeholder="+91 847-397-8031"
-            onChange={handleChange}
-          />
+          <input name="phone" type="text" onChange={handleChange} />
           <label htmlFor="">Description</label>
           <textarea
-            placeholder="A short description of yourself"
             name="desc"
             id=""
             cols="30"

@@ -35,7 +35,6 @@ function Featured() {
               <img src="./img/search.png" alt="" />
               <input
                 type="text"
-                placeholder='Try searching "developer"'
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={handleKeyDown}
                 value={input}

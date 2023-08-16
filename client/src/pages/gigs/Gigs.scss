@@ -65,7 +65,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 10px;
-
+      margin-bottom: 30px;
       .left {
         display: flex;
         align-items: center;
@@ -143,8 +143,9 @@
 
     .cards {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-start;
       flex-wrap: wrap;
+      gap: 80px;
     }
   }
 }
