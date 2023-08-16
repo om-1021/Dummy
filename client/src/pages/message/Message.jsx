@@ -60,11 +60,17 @@ const Message = () => {
   return (
     <div className="message">
       <div className="container">
-        <span className="breadcrumbs">
-          <Link to="/messages">Messages</Link> {">"}
-          {sellerDataLoading ? "Loading.." : username}
-          
-        </span>
+        <div className="top">
+          <div className="breadcrumbs">
+            <Link
+              style={{ textDecoration: "none", color: "aqua" }}
+              to="/messages"
+            >
+              Messages
+            </Link>
+          </div>
+          <h1> {sellerDataLoading ? "Loading.." : username}</h1>
+        </div>
 
         {isLoading ? (
           "loading"
