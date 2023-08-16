@@ -61,10 +61,6 @@
 //   console.log("Backend server running");
 // });
 
-
-
-
-
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
@@ -75,9 +71,12 @@ import conversationRoute from "./routes/conversation.route.js";
 import messageRoute from "./routes/message.route.js";
 import reviewRoute from "./routes/review.route.js";
 import authRoute from "./routes/auth.route.js";
-import sendRoute from './routes/send.route.js'; 
+import sendRoute from "./routes/send.route.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
+import getNameRoute from "./routes/getName.route.js";
+
+// Use your routes
 
 const app = express();
 dotenv.config();
@@ -117,13 +116,14 @@ app.use(cookieParser());
 //   });
 
 app.use("/api/auth", authRoute);
+app.use("/api/getName/:id", getNameRoute);
 app.use("/api/users", userRoute);
 app.use("/api/gigs", gigRoute);
 app.use("/api/orders", orderRoute);
 app.use("/api/conversations", conversationRoute);
 app.use("/api/messages", messageRoute);
 app.use("/api/reviews", reviewRoute);
-app.use("/api/send",sendRoute)
+app.use("/api/send", sendRoute);
 
 app.use((err, req, res, next) => {
   const errorStatus = err.status || 500;

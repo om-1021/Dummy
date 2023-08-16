@@ -9,7 +9,7 @@ export const createConversation = async (req, res, next) => {
     readBySeller: req.isSeller,
     readByBuyer: !req.isSeller,
   });
-
+ console.log(req.body)
   try {
     const savedConversation = await newConversation.save();
     res.status(201).send(savedConversation);

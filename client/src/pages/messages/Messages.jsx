@@ -31,6 +31,27 @@ const Messages = () => {
     mutation.mutate(id);
   };
 
+  const { isLoading: sellerDataLoading, data: sellerData } = useQuery({
+    queryKey: ["sellers"],
+    queryFn: () =>
+      Promise.all(
+        data.map(
+          (c) =>
+            newRequest
+              .get(
+                `conversations/getName/${
+                  currentUser.isSeller ? c.buyerId : c.sellerId
+                }`
+              )
+              .then((res) => ({
+                sellerId: currentUser.isSeller ? c.buyerId : c.sellerId,
+                sellerName: res.data,
+              })) // Include sellerId
+        )
+      ),
+    enabled: !!data, // Only fetch when data is available
+  });
+
   return (
     <div className="messages">
       {isLoading ? (
@@ -58,7 +79,19 @@ const Messages = () => {
                 }
                 key={c.id}
               >
-                <td>{currentUser.isSeller ? c.buyerId : c.sellerId}</td>
+                {/* <td>{isLoadiing ? "Loading.." : res.data}</td> */}
+                {console.log(sellerData)}
+
+                <td>
+                  {!currentUser.isSeller
+                    ? sellerDataLoading
+                      ? "Loading..."
+                      : sellerData.find((e) => e.sellerId === c.sellerId)
+                          ?.sellerName
+                    : sellerDataLoading ? "loading.." :  sellerData.find((e) => e.sellerId === c.buyerId)
+                        ?.sellerName}
+                </td>
+
                 <td>
                   <Link to={`/message/${c.id}`} className="link">
                     {c?.lastMessage?.substring(0, 100)}...

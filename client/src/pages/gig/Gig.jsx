@@ -41,9 +41,6 @@ function Gig() {
       ) : (
         <div className="container">
           <div className="left">
-            <span className="breadcrumbs">
-              Gigster{">"} Graphics & Design {">"}
-            </span>
             <h1>{data.title}</h1>
             {isLoadingUser ? (
               "loading"
@@ -99,7 +96,16 @@ function Gig() {
                         </span>
                       </div>
                     )}
-                    <button>Contact Me</button>
+                    <button
+                      style={{ cursor: "pointer" }}
+                      onClick={() =>
+                        (window.location = `mailto:${
+                          isLoadingUser ? "loading.." : dataUser.email
+                        }`)
+                      }
+                    >
+                      Contact Me
+                    </button>
                   </div>
                 </div>
                 <div className="box">
@@ -141,7 +147,7 @@ function Gig() {
             <div className="details">
               <div className="item">
                 <img src="/img/clock.png" alt="" />
-                <span>{data.deliveryDate} Days Delivery</span>
+                <span>{data.deliveryTime} Days Delivery</span>
               </div>
               <div className="item">
                 <img src="/img/recycle.png" alt="" />
