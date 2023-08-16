@@ -44,11 +44,10 @@ function Gigs() {
     <div className="gigs">
       <div className="container">
         <span className="breadcrumbs">Gigster Graphics & Design </span>
-        <h1>AI Artists  </h1>
-     
+        <h1>AI Artists </h1>
 
         <p>
-          Explore the boundaries of art and technology with Liverr's AI artists
+          Explore the boundaries of art and technology with Gigster's AI artists
         </p>
         <div className="menu">
           <div className="left">
@@ -57,7 +56,7 @@ function Gigs() {
             <input ref={maxRef} type="number" placeholder="max" />
             <button onClick={apply}>Apply</button>
           </div>
-          <div className="right">
+          {/* <div className="right">
             <span className="sortBy">Sort by</span>
             <span className="sortType">
               {sort === "sales" ? "Best Selling" : "Newest"}
@@ -73,7 +72,7 @@ function Gigs() {
                 <span onClick={() => reSort("sales")}>Popular</span>
               </div>
             )}
-          </div>
+          </div> */}
         </div>
         <div className="cards">
           {isLoading

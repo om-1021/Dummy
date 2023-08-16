@@ -23,9 +23,6 @@
         color: #f8efe5;
       }
 
-      h1 {
-      }
-
       .user {
         display: flex;
         align-items: center;
@@ -102,6 +99,17 @@
             flex-direction: column;
             gap: 10px;
 
+            button {
+              background-color: #ff4533;
+              padding: 8px;
+              color: white;
+              font-weight: 500;
+              border: none;
+              font-size: 16px;
+              cursor: pointer;
+              border-radius: 5px;
+            }
+
             .stars {
               display: flex;
               align-items: center;
@@ -117,13 +125,6 @@
                 font-weight: bold;
                 color: #ffc108;
               }
-            }
-
-            button {
-              background-color: white;
-              border-radius: 5px;
-              border: 1px solid gray;
-              padding: 10px;
             }
           }
         }
@@ -235,6 +236,10 @@
       max-height: 500px;
       position: sticky;
       top: 150px;
+
+      button {
+        border-radius: 5px;
+      }
 
       .price {
         display: flex;

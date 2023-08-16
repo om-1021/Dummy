@@ -21,7 +21,7 @@ function Home() {
           <div className="item">
             <h1>A whole world of freelance talent at your fingertips</h1>
             <div className="title">
-              <img src="./img/check.png" alt="" />
+              <img src="./img/check-mark.png" alt="" />
               The best for every budget
             </div>
             <p>
@@ -29,7 +29,7 @@ function Home() {
               just project-based pricing.
             </p>
             <div className="title">
-              <img src="./img/check.png" alt="" />
+              <img src="./img/check-mark.png" alt="" />
               Quality work done quickly
             </div>
             <p>
@@ -37,7 +37,7 @@ function Home() {
               minutes.
             </p>
             <div className="title">
-              <img src="./img/check.png" alt="" />
+              <img src="./img/check-mark.png" alt="" />
               Protected payments, every time
             </div>
             <p>
@@ -45,7 +45,7 @@ function Home() {
               until you approve the work.
             </p>
             <div className="title">
-              <img src="./img/check.png" alt="" />
+              <img src="./img/check-mark.png" alt="" />
               24/7 support
             </div>
             <p>

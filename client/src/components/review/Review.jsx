@@ -56,7 +56,6 @@ const Review = ({ review }) => {
             ))}
         </div>
       </div>
-      
     </div>
   );
 };

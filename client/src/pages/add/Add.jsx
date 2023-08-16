@@ -144,7 +144,7 @@ const Add = () => {
             <label htmlFor="">Add Features</label>
             <form action="" className="add" onSubmit={handleFeature}>
               <input type="text" placeholder="e.g. page design" />
-              <button type="submit">add</button>
+              <button type="submit">Add</button>
             </form>
             <div className="addedFeatures">
               {state?.features?.map((f) => (

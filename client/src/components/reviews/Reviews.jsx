@@ -78,30 +78,48 @@ const Reviews = ({ gigId }) => {
       <div className="add">
         <h3>Add a review</h3>
         <form action="" className="addForm" onSubmit={handleSubmit}>
-          <input type="text" placeholder="write your opinion" />
-
-          <select name="" id="">
-            <option value={1}>1</option>
-            <option value={2}>2</option>
-            <option value={3}>3</option>
-            <option value={4}>4</option>
-            <option value={5}>5</option>
-          </select>
-          <select name="" id="">
-            <option value={1}>1</option>
-            <option value={2}>2</option>
-            <option value={3}>3</option>
-            <option value={4}>4</option>
-            <option value={5}>5</option>
-          </select>
-          <select name="" id="">
-            <option value={1}>1</option>
-            <option value={2}>2</option>
-            <option value={3}>3</option>
-            <option value={4}>4</option>
-            <option value={5}>5</option>
-          </select>
-          <button>Send</button>
+          <input
+            className="formInput"
+            type="text"
+            placeholder="write your opinion"
+          />
+          <div className="labels">
+            <div className="eachLabel">
+              <label for="Communication">Communication : </label>
+              <select id="Communication">
+                <option value={1}>1</option>
+                <option value={2}>2</option>
+                <option value={3}>3</option>
+                <option value={4}>4</option>
+                <option value={5}>5</option>
+              </select>
+            </div>
+            <div className="eachLabel">
+              <label for="Quality Of Work">Quatity Of Work : </label>
+              <select id="Quatity Of Work">
+                <option value={1}>1</option>
+                <option value={2}>2</option>
+                <option value={3}>3</option>
+                <option value={4}>4</option>
+                <option value={5}>5</option>
+              </select>
+            </div>
+            <div className="eachLabel">
+              <label for="Time of Delivery">Time of Delivery : </label>
+              <select
+                name="Time of Delivery"
+                id="Time of Delivery"
+                value="Time of Delivery"
+              >
+                <option value={1}>1</option>
+                <option value={2}>2</option>
+                <option value={3}>3</option>
+                <option value={4}>4</option>
+                <option value={5}>5</option>
+              </select>
+            </div>
+          </div>
+          <button>Post</button>
         </form>
       </div>
     </div>

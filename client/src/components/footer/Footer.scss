@@ -1,70 +1,81 @@
 .footer {
-  display: flex;
-  justify-content: center;
-  color: #666;
-  padding: 50px 0;
   background-color: black;
+  padding: 60px 0;
+}
 
-  img {
-    width: 24px;
-    height: 24px;
-  }
+.containerFooter {
+  border-radius: 50px;
+  width: 1400px;
+  margin: 0 auto;
+  padding: 50px 50px;
+  background-color: #fef2e7;
+}
 
-  .container {
-    width: 1450px;
-    margin: 0 80px;
-    padding: 30px 0;
-    border-radius: 60px;
-    background-color: #fef2e7;
-    .top {
-      display: flex;
-      justify-content: space-around;
-      .item {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        h2 {
-          font-size: 16px;
-          color: #555;
-        }
-        span {
-          font-weight: 300;
-        }
-      }
-    }
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
 
-    hr {
-      margin: 50px 0px;
-      height: 0;
-      border: 1px solid #ebe9e9;
-    }
-    .bottom {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin: 0 180px;
+.footer-section {
+  flex: 1;
+  margin-right: 40px;
+}
 
-      .left {
-        display: flex;
-        align-items: center;
-        gap: 20px;
+.category-heading {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
 
-        span {
-          font-size: 13px;
-          white-space: nowrap;
-        }
-      }
-      .right {
-        width: max-content;
-        display: flex;
-        align-items: center;
-        gap: 30px;
+.category-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.category-list span:hover {
+  border-bottom: 1px solid #ff4533; /* Red color */
+}
 
-        .social {
-          display: flex;
-          gap: 20px;
-        }
-      }
-    }
-  }
+.social-icons {
+  width: 1400px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.social-icons img {
+  width: 36px;
+  height: 36px;
+  margin-right: 20px;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #d1d1d1;
+  margin: 20px 0;
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.bottomD {
+  width: 1400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bottom-logo {
+  font-size: 40px;
+  font-weight: bold;
+  color: #ff4533;
+}
+
+.footer .copyright {
+  font-size: 14px;
+  color: #888;
 }

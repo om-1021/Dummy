@@ -14,8 +14,7 @@
     color: white;
 
     button {
-      background-color: white;
-      color: #ff4533 !important;
+      color: white;
       border: 1px solid #ff4533 !important;
     }
   }
@@ -80,16 +79,18 @@
       }
 
       button {
-        color: black;
-        padding: 10px 20px;
-        border-radius: 5px;
-        border: 1px solid white;
-        background-color: transparent;
+        width: 80px;
+        height: 40px;
+        border: none;
+        background-color: #ff4533;
+        color: white;
+        align-self: flex-end;
         cursor: pointer;
+        border-radius: 10px;
 
         &:hover {
-          background-color:white;
-          border-color: red;
+          background-color: white;
+          color: #ff4533;
         }
       }
     }

@@ -88,7 +88,7 @@ const Message = () => {
         )}
         <hr />
         <form className="write" onSubmit={handleSubmit}>
-          <textarea type="text" placeholder="write a message" />
+          <textarea type="text" placeholder="Write a message" />
           <button type="submit">Send</button>
         </form>
       </div>

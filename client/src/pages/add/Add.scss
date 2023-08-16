@@ -1,6 +1,7 @@
 .add {
   display: flex;
   justify-content: center;
+  background-color: black;
 
   .container {
     width: 1400px;
@@ -35,14 +36,15 @@
         select,
         textarea {
           padding: 20px;
+          border-radius: 20px;
         }
 
-        .images{
+        .images {
           display: flex;
           align-items: center;
           gap: 20px;
 
-          .imagesInputs{
+          .imagesInputs {
             display: flex;
             flex-direction: column;
             gap: 20px;
@@ -50,29 +52,31 @@
         }
 
         button {
+          width: 100px;
+          height: 60px;
           border: none;
-          padding: 20px;
+          background-color: #ff4533;
           color: white;
-          font-weight: 500;
-          font-size: 18px;
-          background-color: #1dbf73;
+          align-self: flex-end;
           cursor: pointer;
+          border-radius: 10px;
+          font-size: 16px;
         }
 
-        .add{
+        .add {
           display: flex;
           justify-content: space-between;
 
-          input{
+          input {
             width: 80%;
           }
         }
 
-        .addedFeatures{
+        .addedFeatures {
           display: flex;
           gap: 20px;
 
-          button{
+          button {
             height: 30px;
             font-size: 12px;
             font-weight: 400;
