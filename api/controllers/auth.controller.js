@@ -39,14 +39,13 @@ export const login = async (req, res, next) => {
       .cookie("accessToken", token, {
         httpOnly: true,
         secure: true,
-        domain: "64ddd9a30c8ef05838912cf1--cozy-creponne-6776b8.netlify.app/",
       })
       .status(200)
       .send(info);
   } catch {
     res.status(500).send("Something went wrong");
   }
-  console.log(cookie);
+  console.log("ACCESStOKEN --> " + cookie.accessToken);
 };
 
 export const logout = async (req, res) => {
