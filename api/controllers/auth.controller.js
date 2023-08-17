@@ -5,7 +5,6 @@ import createError from "../utils/createError.js";
 import dotenv from "dotenv";
 dotenv.config();
 
-
 export const register = async (req, res, next) => {
   try {
     const hash = bcrypt.hashSync(req.body.password, 6);
@@ -36,20 +35,18 @@ export const login = async (req, res, next) => {
       },
       process.env.JWT_KEY
     );
-    console.log("created token is -->" , token)
+    console.log("created token is -->", token);
 
     const { password, ...info } = user._doc;
     res
       .cookie("accessToken", token, {
-        httpOnly: true,
-        secure: true,
+        httpOnly: false,
       })
       .status(200)
       .send(info);
   } catch {
     res.status(500).send("Something went wrong");
   }
-  
 };
 
 export const logout = async (req, res) => {

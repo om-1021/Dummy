@@ -27,7 +27,10 @@ const connect = async () => {
   }
 };
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'https://64ddd9a30c8ef05838912cf1--cozy-creponne-6776b8.netlify.app');
+  res.header(
+    "Access-Control-Allow-Origin",
+    "https://cozy-creponne-6776b8.netlify.app/"
+  );
   res.header("Access-Control-Allow-Credentials", "true");
   res.header(
     "Access-Control-Allow-Headers",
@@ -39,9 +42,8 @@ app.use((req, res, next) => {
 
 app.use(
   cors({
-    origin:
-      "https://64ddd9a30c8ef05838912cf1--cozy-creponne-6776b8.netlify.app",
-    credentials: true,
+    origin: "https://cozy-creponne-6776b8.netlify.app/",
+    credential: true,
   })
 );
 app.use(express.json());
