@@ -37,11 +37,20 @@ app.use((req, res, next) => {
   next();
 });
 
+// app.use(
+//   cors({
+//     origin:
+//       "https://64ddd9a30c8ef05838912cf1--cozy-creponne-6776b8.netlify.app",
+//     credentials: true,
+//   })
+// );
 app.use(
   cors({
     origin:
       "https://64ddd9a30c8ef05838912cf1--cozy-creponne-6776b8.netlify.app",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true,
+    allowedHeaders: "Origin,X-Requested-With,Content-Type,Accept,Authorization",
   })
 );
 app.use(express.json());

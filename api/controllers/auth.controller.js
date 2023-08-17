@@ -38,7 +38,7 @@ export const login = async (req, res, next) => {
     console.log("created token is -->", token);
 
     const { password, ...info } = user._doc;
-     res
+    res
       .cookie("accessToken", token, {
         httpOnly: true,
         domain: "64ddd9a30c8ef05838912cf1--cozy-creponne-6776b8.netlify.app",
@@ -46,11 +46,12 @@ export const login = async (req, res, next) => {
       })
       .status(200)
       .send(info);
-    
+
     console.log("cookie created successfully");
     console.log("info is -->", info);
   } catch {
     res.status(500).send("Something went wrong");
+    console.log("cookies not set");
   }
 };
 
@@ -61,6 +62,4 @@ export const logout = async (req, res) => {
     })
     .status(200)
     .send("User has been logged out successfully;");
-  
-  console.log("user have been logged out successfully")
 };
