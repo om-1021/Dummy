@@ -12,6 +12,7 @@ import sendRoute from "./routes/send.route.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import getNameRoute from "./routes/getName.route.js";
+const BASE_URL = process.env.BASE_URL;
 
 const app = express();
 dotenv.config();
@@ -26,7 +27,7 @@ const connect = async () => {
   }
 };
 app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "http://localhost:5173");
+  res.header("Access-Control-Allow-Origin", BASE_URL);
   res.header("Access-Control-Allow-Credentials", "true");
   res.header(
     "Access-Control-Allow-Headers",
@@ -36,7 +37,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+app.use(cors({ origin: BASE_URL, credentials: true }));
 app.use(express.json());
 app.use(cookieParser());
 
