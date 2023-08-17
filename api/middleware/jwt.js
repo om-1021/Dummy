@@ -6,10 +6,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 export const verifyToken = (req, res, next) => {
-  // const token = req.cookies.accessToken;
-  const cookie_key = 'acessToken';
-  const token = read_cookie(cookie_key);
-
+  const token = req.cookies.accessToken;
   // if (!token) return next(createError(401, "You are not authenticated"));
   console.log("token -->", token);
   console.log("req.cookies.token -> ", req.cookies.token);
