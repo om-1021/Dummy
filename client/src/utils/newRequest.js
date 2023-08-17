@@ -1,6 +1,6 @@
 import axios from "axios";
 import { BASE_URL } from "../helper";
-const url = BASE_URL + "/api";
+const url = BASE_URL;
 
 const newRequest = axios.create({
   baseURL: url,
