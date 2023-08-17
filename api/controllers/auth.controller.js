@@ -3,7 +3,7 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import createError from "../utils/createError.js";
 
-export const  register = async (req, res,next) => {
+export const register = async (req, res, next) => {
   try {
     const hash = bcrypt.hashSync(req.body.password, 6);
     const newUser = new User({
@@ -17,15 +17,14 @@ export const  register = async (req, res,next) => {
   }
 };
 
-export const login = async (req, res,next) => {
+export const login = async (req, res, next) => {
   try {
-    
     const user = await User.findOne({ username: req.body.username });
-    if (!user) return next(createError(404,"User not found!"));
+    if (!user) return next(createError(404, "User not found!"));
 
     const isCorrect = bcrypt.compareSync(req.body.password, user.password);
-    
-    if (!isCorrect) return next(createError(400,"Wrong password or username"));
+
+    if (!isCorrect) return next(createError(400, "Wrong password or username"));
 
     const token = jwt.sign(
       {
@@ -39,6 +38,9 @@ export const login = async (req, res,next) => {
     res
       .cookie("accessToken", token, {
         httpOnly: true,
+        secure: true,
+        domain:
+          "https://64ddd9a30c8ef05838912cf1--cozy-creponne-6776b8.netlify.app",
       })
       .status(200)
       .send(info);
@@ -48,10 +50,11 @@ export const login = async (req, res,next) => {
 };
 
 export const logout = async (req, res) => {
-  res.clearCookie("accessToken",{
-    sameSite:"none",
-    secure:true,
-  })
-  .status(200)
-  .send("User has been logged out successfully;");
+  res
+    .clearCookie("accessToken", {
+      sameSite: "none",
+      secure: true,
+    })
+    .status(200)
+    .send("User has been logged out successfully;");
 };
