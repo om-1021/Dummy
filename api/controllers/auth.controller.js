@@ -43,6 +43,7 @@ export const login = async (req, res, next) => {
         httpOnly: true,
         secure: true,
         domain: "64ddd9a30c8ef05838912cf1--cozy-creponne-6776b8.netlify.app",
+        sameSite: "none",
       })
       .status(200)
       .send(info);
