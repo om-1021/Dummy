@@ -37,7 +37,13 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(cors({ origin: BASE_URL, credentials: true }));
+app.use(
+  cors({
+    origin:
+      "https://64ddd9a30c8ef05838912cf1--cozy-creponne-6776b8.netlify.app",
+    credentials: true,
+  })
+);
 app.use(express.json());
 app.use(cookieParser());
 
