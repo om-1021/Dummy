@@ -39,8 +39,7 @@ export const login = async (req, res, next) => {
       .cookie("accessToken", token, {
         httpOnly: true,
         secure: true,
-        domain:
-          "https://64ddd9a30c8ef05838912cf1--cozy-creponne-6776b8.netlify.app",
+        domain: "64ddd9a30c8ef05838912cf1--cozy-creponne-6776b8.netlify.app/",
       })
       .status(200)
       .send(info);
