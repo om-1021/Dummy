@@ -12,11 +12,11 @@ import sendRoute from "./routes/send.route.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import getNameRoute from "./routes/getName.route.js";
-const BASE_URL = process.env.BASE_URL;
 
 const app = express();
 dotenv.config();
 mongoose.set("strictQuery", true);
+const BASE_URL = process.env.BASE_URL;
 
 const connect = async () => {
   try {
