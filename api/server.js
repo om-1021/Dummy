@@ -27,7 +27,10 @@ const connect = async () => {
   }
 };
 app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", BASE_URL);
+  res.header(
+    "Access-Control-Allow-Origin",
+    "https://64ddd9a30c8ef05838912cf1--cozy-creponne-6776b8.netlify.app"
+  );
   res.header("Access-Control-Allow-Credentials", "true");
   res.header(
     "Access-Control-Allow-Headers",
@@ -37,7 +40,13 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(cors({ origin: BASE_URL, credentials: true }));
+app.use(
+  cors({
+    origin:
+      "https://64ddd9a30c8ef05838912cf1--cozy-creponne-6776b8.netlify.app",
+    credentials: true,
+  })
+);
 app.use(express.json());
 app.use(cookieParser());
 
