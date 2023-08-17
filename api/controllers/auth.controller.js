@@ -2,8 +2,8 @@ import User from "../models/user.model.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import createError from "../utils/createError.js";
-import dotenv from "dotenv";
-dotenv.config();
+
+import { bake_cookie, read_cookie, delete_cookie } from "sfcookies";
 
 export const register = async (req, res, next) => {
   try {
@@ -38,15 +38,16 @@ export const login = async (req, res, next) => {
     console.log("created token is -->", token);
 
     const { password, ...info } = user._doc;
-    await res
-      .cookie("accessToken", token, {
-        httpOnly: true,
-
-        domain: "64ddd9a30c8ef05838912cf1--cozy-creponne-6776b8.netlify.app",
-        sameSite: "none",
-      })
-      .status(200)
-      .send(info);
+    //  res
+    //   .cookie("accessToken", token, {
+    //     httpOnly: true,
+    //     domain: "64ddd9a30c8ef05838912cf1--cozy-creponne-6776b8.netlify.app",
+    //     sameSite: "none",
+    //   })
+    //   .status(200)
+    //   .send(info);
+    const cookie_key = 'acessToken';
+    bake_cookie(cookie_key, token);
     console.log("cookie created successfully");
     console.log("info is -->", info);
   } catch {
@@ -55,10 +56,13 @@ export const login = async (req, res, next) => {
 };
 
 export const logout = async (req, res) => {
-  res
-    .clearCookie("accessToken", {
-      sameSite: "none",
-    })
-    .status(200)
-    .send("User has been logged out successfully;");
+  // res
+  //   .clearCookie("accessToken", {
+  //     sameSite: "none",
+  //   })
+  //   .status(200)
+  //   .send("User has been logged out successfully;");
+  const cookie_key = 'acessToken';
+  delete_cookie(cookie_key);
+  console.log("user have been logged out successfully")
 };

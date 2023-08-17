@@ -20,6 +20,7 @@
     "jsonwebtoken": "^9.0.0",
     "mongodb": "^5.6.0",
     "mongoose": "^7.2.3",
+    "sfcookies": "^1.0.2",
     "stripe": "^12.13.0"
   },
   "devDependencies": {

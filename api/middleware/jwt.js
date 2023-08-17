@@ -1,10 +1,15 @@
 import createError from "../utils/createError.js";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
+import { bake_cookie, read_cookie, delete_cookie } from "sfcookies";
+
 dotenv.config();
 
 export const verifyToken = (req, res, next) => {
-  const token = req.cookies.accessToken;
+  // const token = req.cookies.accessToken;
+  const cookie_key = 'acessToken';
+  const token = read_cookie(cookie_key);
+
   // if (!token) return next(createError(401, "You are not authenticated"));
   console.log("token -->", token);
   console.log("req.cookies.token -> ", req.cookies.token);
