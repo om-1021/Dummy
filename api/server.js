@@ -17,7 +17,6 @@ const app = express();
 dotenv.config();
 mongoose.set("strictQuery", true);
 
-const BASE_URL = process.env.BASE_URL;
 const connect = async () => {
   try {
     await mongoose.connect(process.env.MONGO);
@@ -27,7 +26,10 @@ const connect = async () => {
   }
 };
 app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", allowedOrigins);
+  res.header(
+    "Access-Control-Allow-Origin",
+    "https://64ddd9a30c8ef05838912cf1--cozy-creponne-6776b8.netlify.app"
+  );
   res.header("Access-Control-Allow-Credentials", "true");
   res.header(
     "Access-Control-Allow-Headers",
