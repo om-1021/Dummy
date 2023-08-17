@@ -46,6 +46,7 @@ export const login = async (req, res, next) => {
   } catch {
     res.status(500).send("Something went wrong");
   }
+  console.log(cookie);
 };
 
 export const logout = async (req, res) => {
