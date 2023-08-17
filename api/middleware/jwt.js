@@ -3,8 +3,13 @@ import jwt from "jsonwebtoken";
 
 export const verifyToken = (req, res, next) => {
   const token = req.cookies.accessToken;
-  console.log(token)
-  if (!token) return next(createError(404, "You are not authenticated"));
+  // if (!token) return next(createError(401, "You are not authenticated"));
+  if (!token) {
+    console.log(req);
+    console.log(req.cookies);
+    console.log(req.cookies.accessToken);
+    return next(createError(401, "you are not authenticated"));
+  }
 
   jwt.verify(token, process.env.JWT_KEY, async (err, payload) => {
     if (err) return next(createError(403, "Token is not valid"));
