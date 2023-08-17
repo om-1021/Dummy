@@ -37,13 +37,10 @@ app.use((req, res, next) => {
   next();
 });
 
-const allowedOrigins = [
-  "https://64ddd9a30c8ef05838912cf1--cozy-creponne-6776b8.netlify.app",
-  "https://gigster-backend-algokings.onrender.com",
-];
 app.use(
   cors({
-    origin: allowedOrigins,
+    origin:
+      "https://64ddd9a30c8ef05838912cf1--cozy-creponne-6776b8.netlify.app",
     credentials: true,
   })
 );
