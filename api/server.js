@@ -39,8 +39,7 @@ app.use((req, res, next) => {
 
 app.use(
   cors({
-    origin:
-      "https://64ddd9a30c8ef05838912cf1--cozy-creponne-6776b8.netlify.app",
+    origin: "64ddd9a30c8ef05838912cf1--cozy-creponne-6776b8.netlify.app",
     credentials: true,
   })
 );

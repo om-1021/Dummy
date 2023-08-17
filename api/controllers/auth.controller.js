@@ -36,6 +36,7 @@ export const login = async (req, res, next) => {
       },
       process.env.JWT_KEY
     );
+    console.log("created token is -->" , token)
 
     const { password, ...info } = user._doc;
     res
@@ -48,7 +49,7 @@ export const login = async (req, res, next) => {
   } catch {
     res.status(500).send("Something went wrong");
   }
-  console.log("ACCESStOKEN --> " + cookie.accessToken);
+  
 };
 
 export const logout = async (req, res) => {
