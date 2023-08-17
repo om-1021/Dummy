@@ -41,7 +41,7 @@ export const login = async (req, res, next) => {
     await res
       .cookie("accessToken", token, {
         httpOnly: true,
-        secure: true,
+
         domain: "64ddd9a30c8ef05838912cf1--cozy-creponne-6776b8.netlify.app",
         sameSite: "none",
       })
@@ -58,7 +58,6 @@ export const logout = async (req, res) => {
   res
     .clearCookie("accessToken", {
       sameSite: "none",
-      secure: true,
     })
     .status(200)
     .send("User has been logged out successfully;");
