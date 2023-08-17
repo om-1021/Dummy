@@ -38,7 +38,7 @@ export const login = async (req, res, next) => {
     console.log("created token is -->", token);
 
     const { password, ...info } = user._doc;
-    res
+    await res
       .cookie("accessToken", token, {
         httpOnly: true,
         secure: true,
@@ -47,6 +47,8 @@ export const login = async (req, res, next) => {
       })
       .status(200)
       .send(info);
+    console.log("cookie created successfully");
+    console.log("info is -->", info);
   } catch {
     res.status(500).send("Something went wrong");
   }
