@@ -40,7 +40,9 @@ export const login = async (req, res, next) => {
     const { password, ...info } = user._doc;
     res
       .cookie("accessToken", token, {
-        httpOnly: false,
+        httpOnly: true,
+        secure:true,
+        domain: "cozy-creponne-6776b8.netlify.app"
       })
       .status(200)
       .send(info);
