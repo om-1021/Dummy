@@ -62,7 +62,7 @@ export const logout = async (req, res) => {
   //   .status(200)
   //   .send("User has been logged out successfully;");
   try {
-    // localStorage.removeItem("accessToken");
+    localStorage.removeItem("accessToken");
     console.log("user logged out successfully");
     res.status(200).send("user logged out");
   } catch (err) {
