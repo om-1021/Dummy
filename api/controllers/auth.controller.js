@@ -34,15 +34,8 @@ export const login = async (req, res, next) => {
       process.env.JWT_KEY
     );
     console.log("created token is -->", token);
-
     const { password, ...info } = user._doc;
-    res
-      .cookie("accessToken", token, {
-        httpOnly: true,
-        sameSite: "none",
-      })
-      .status(200)
-      .send({ ...info, accessToken: token });
+    res.status(200).send({ ...info, accessToken: token });
 
     console.log("aceestoken stored successfully");
     console.log("info is -->", info);
@@ -53,20 +46,14 @@ export const login = async (req, res, next) => {
 
 export const logout = async (req, res) => {
   try {
-    localStorage.removeItem("accessToken");
-    console.log("user logged out successfully");
-    res.status(200).send("user logged out");
+    res
+      .clearCookie("accessToken", {
+        httpOnly: true,
+        sameSite: "none",
+      })
+      .status(200)
+      .send("User has been logged out successfully;");
   } catch (err) {
-    try {
-      res
-        .clearCookie("accessToken", {
-          httpOnly: true,
-          sameSite: "none",
-        })
-        .status(200)
-        .send("User has been logged out successfully;");
-    } catch (err) {
-      next(err);
-    }
+    next(err);
   }
 };
