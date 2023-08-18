@@ -39,7 +39,6 @@ export const login = async (req, res, next) => {
     res
       .cookie("accessToken", token, {
         httpOnly: true,
-        domain: "64ddd9a30c8ef05838912cf1--cozy-creponne-6776b8.netlify.app",
         sameSite: "none",
       })
       .status(200)
@@ -48,14 +47,7 @@ export const login = async (req, res, next) => {
     console.log("aceestoken stored successfully");
     console.log("info is -->", info);
   } catch (err) {
-    res
-      .cookie("accessToken", token, {
-        httpOnly: true,
-        domain: "64ddd9a30c8ef05838912cf1--cozy-creponne-6776b8.netlify.app",
-        sameSite: "none",
-      })
-      .status(200)
-      .send(info);
+    res.status(500).send({ message: "cant store jwt token in cookies" });
   }
 };
 
@@ -68,6 +60,7 @@ export const logout = async (req, res) => {
     try {
       res
         .clearCookie("accessToken", {
+          httpOnly: true,
           sameSite: "none",
         })
         .status(200)
