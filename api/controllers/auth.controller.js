@@ -36,7 +36,6 @@ export const login = async (req, res, next) => {
     console.log("created token is -->", token);
 
     const { password, ...info } = user._doc;
-    localStorage.setItem("accessToken", token);
     res
       .cookie("accessToken", token, {
         httpOnly: true,
@@ -48,23 +47,15 @@ export const login = async (req, res, next) => {
 
     console.log("aceestoken stored successfully");
     console.log("info is -->", info);
-    res.status(200).send(info);
   } catch (err) {
-    // console.log("User not logged in succesfully");
-    // next(err);
-    try {
-      res
-        .cookie("accessToken", token, {
-          httpOnly: true,
-          domain: "64ddd9a30c8ef05838912cf1--cozy-creponne-6776b8.netlify.app",
-          sameSite: "none",
-        })
-        .status(200)
-        .send(info);
-    } catch (err) {
-      console.log("User not logged in succesfully");
-      next(err);
-    }
+    res
+      .cookie("accessToken", token, {
+        httpOnly: true,
+        domain: "64ddd9a30c8ef05838912cf1--cozy-creponne-6776b8.netlify.app",
+        sameSite: "none",
+      })
+      .status(200)
+      .send(info);
   }
 };
 
