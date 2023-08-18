@@ -3,8 +3,6 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import createError from "../utils/createError.js";
 
-import { bake_cookie, read_cookie, delete_cookie } from "sfcookies";
-
 export const register = async (req, res, next) => {
   try {
     const hash = bcrypt.hashSync(req.body.password, 6);
@@ -38,16 +36,17 @@ export const login = async (req, res, next) => {
     console.log("created token is -->", token);
 
     const { password, ...info } = user._doc;
-    res
-      .cookie("accessToken", token, {
-        httpOnly: true,
-        domain: "64ddd9a30c8ef05838912cf1--cozy-creponne-6776b8.netlify.app",
-        sameSite: "none",
-      })
-      .status(200)
-      .send(info);
+    // res
+    //   .cookie("accessToken", token, {
+    //     httpOnly: true,
+    //     domain: "64ddd9a30c8ef05838912cf1--cozy-creponne-6776b8.netlify.app",
+    //     sameSite: "none",
+    //   })
+    //   .status(200)
+    //   .send(info);
+    localStorage.setItem("accessToken", token);
 
-    console.log("cookie created successfully");
+    console.log("aceestoken stored successfully");
     console.log("info is -->", info);
   } catch {
     res.status(500).send("Something went wrong");
@@ -56,10 +55,16 @@ export const login = async (req, res, next) => {
 };
 
 export const logout = async (req, res) => {
-  res
-    .clearCookie("accessToken", {
-      sameSite: "none",
-    })
-    .status(200)
-    .send("User has been logged out successfully;");
+  // res
+  //   .clearCookie("accessToken", {
+  //     sameSite: "none",
+  //   })
+  //   .status(200)
+  //   .send("User has been logged out successfully;");
+  try {
+    localStorage.removeItem("accessToken");
+    console.log("user logged out successfully");
+  } catch (err) {
+    res.status(500).send("Something went wrong");
+  }
 };
