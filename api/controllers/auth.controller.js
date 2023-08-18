@@ -37,14 +37,14 @@ export const login = async (req, res, next) => {
 
     const { password, ...info } = user._doc;
     localStorage.setItem("accessToken", token);
-    // res
-    //   .cookie("accessToken", token, {
-    //     httpOnly: true,
-    //     domain: "64ddd9a30c8ef05838912cf1--cozy-creponne-6776b8.netlify.app",
-    //     sameSite: "none",
-    //   })
-    //   .status(200)
-    //   .send(info);
+    res
+      .cookie("accessToken", token, {
+        httpOnly: true,
+        domain: "64ddd9a30c8ef05838912cf1--cozy-creponne-6776b8.netlify.app",
+        sameSite: "none",
+      })
+      .status(200)
+      .send(info);
 
     console.log("aceestoken stored successfully");
     console.log("info is -->", info);
