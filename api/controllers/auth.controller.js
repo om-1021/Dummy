@@ -42,7 +42,7 @@ export const login = async (req, res, next) => {
         sameSite: "none",
       })
       .status(200)
-      .send(info);
+      .send({ ...info, accessToken: token });
 
     console.log("aceestoken stored successfully");
     console.log("info is -->", info);

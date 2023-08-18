@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Login.scss";
 import newRequest from "../../utils/newRequest";
 import { useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -24,6 +25,7 @@ function Login() {
     try {
       const res = await newRequest.post("/auth/login", { username, password });
       localStorage.setItem("currentUser", JSON.stringify(res.data));
+      Cookies.set("accessToken", res.data.accessToken, { sameSite: "none" });
       navigate("/");
     } catch (err) {
       setError(err.response.data);
@@ -38,7 +40,7 @@ function Login() {
         <input
           name="username"
           type="text"
-          value={username} 
+          value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
 
@@ -46,7 +48,7 @@ function Login() {
         <input
           name="password"
           type="password"
-          value={password} 
+          value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
         <button type="submit">Login</button>
