@@ -8,7 +8,7 @@ export const verifyToken = (req, res, next) => {
   const token = localStorage.getItem("accessToken");
   // if (!token) return next(createError(401, "You are not authenticated"));
   console.log("token -->", token);
-  console.log("req.cookies.token -> ", req.cookies.token);
+  console.log("req.cookies.token -> ", token);
   if (!token) {
     return next(createError(401, "you are not authenticated"));
   }
