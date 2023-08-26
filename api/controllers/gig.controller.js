@@ -50,12 +50,14 @@ export const getGigs = async (req, res, next) => {
   const filters = {
     ...(q.userId && { userId: q.userId }),
     ...(q.cat && { cat: q.cat }), // if there is a query specified then only it will use otherwise empty
-    ...((q.min || q.max) && { price: { ...(q.min && { $gt: q.min }),...(q.max && { $lt: q.max }) } }),
+    ...((q.min || q.max) && {
+      price: { ...(q.min && { $gt: q.min }), ...(q.max && { $lt: q.max }) },
+    }),
     ...(q.search && { title: { $regex: q.search, $options: "i" } }), //using this option It will not be case sensitive
   };
 
   try {
-    const gigs = await Gig.find(filters).sort({[q.sort]:-1});
+    const gigs = await Gig.find(filters).sort({ [q.sort]: -1 });
     res.status(200).send(gigs);
   } catch (err) {
     next(err);
