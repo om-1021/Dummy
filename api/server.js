@@ -155,6 +155,7 @@ import sendRoute from "./routes/send.route.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import getNameRoute from "./routes/getName.route.js";
+import successRoute from "./routes/succes.route.js";
 
 // Use your routes
 
@@ -212,6 +213,7 @@ app.use("/api/conversations", conversationRoute);
 app.use("/api/messages", messageRoute);
 app.use("/api/reviews", reviewRoute);
 app.use("/api/send", sendRoute);
+app.use("/api/create-checkout-session", successRoute);
 
 app.use((err, req, res, next) => {
   const errorStatus = err.status || 500;

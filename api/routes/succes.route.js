@@ -1,4 +1,5 @@
 import express, { json } from 'express';
+import router from './user.route';
 const stripe = require('stripe')('YOUR_SECRET_KEY');
 const app = express();
 
@@ -18,3 +19,5 @@ app.post('/create-checkout-session', async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
+
+export default router;
