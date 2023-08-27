@@ -21,7 +21,8 @@ router.post("/", async (req, res) => {
     console.log(res);
     res.json({ sessionId: session.id });
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    console.log(error);
+    next(error);
   }
 });
 
