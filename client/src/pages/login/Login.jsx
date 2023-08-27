@@ -25,11 +25,7 @@ function Login() {
     try {
       const res = await newRequest.post("/auth/login", { username, password });
       localStorage.setItem("currentUser", JSON.stringify(res.data));
-      localStorage.setItem("acessToken",res.data.accessToken);
-      Cookies.set("accessToken", res.data.accessToken, {
-        httpOnly: true,
-        sameSite: "none",
-      });
+
       navigate("/");
     } catch (err) {
       setError(err.response.data);

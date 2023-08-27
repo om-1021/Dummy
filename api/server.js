@@ -171,7 +171,10 @@ const connect = async () => {
   }
 };
 app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "https://main--thunderous-moxie-7b4674.netlify.app/");
+  res.header(
+    "Access-Control-Allow-Origin",
+    "https://64eaf407067a023bd526a617--spiffy-kleicha-742e77.netlify.app"
+  );
   res.header("Access-Control-Allow-Credentials", "true");
   res.header(
     "Access-Control-Allow-Headers",
@@ -181,7 +184,13 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(cors({ origin: "https://main--thunderous-moxie-7b4674.netlify.app/", credentials: true }));
+app.use(
+  cors({
+    origin:
+      "https://64eaf407067a023bd526a617--spiffy-kleicha-742e77.netlify.app",
+    credentials: true,
+  })
+);
 app.use(express.json());
 app.use(cookieParser());
 // app.use((req, res, next) => {
