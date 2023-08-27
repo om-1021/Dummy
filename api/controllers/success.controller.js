@@ -10,12 +10,12 @@ const router = express.Router();
 const stripe = new Stripe(process.env.STRIPE);
 
 export const successController = async (req, res, next) => {
-//   const { items } = req.body; // Items you want to include in the checkout
+  //   const { items } = req.body; // Items you want to include in the checkout
   try {
     const session = await stripe.checkout.sessions.create({
       line_items: [
         {
-          price: 1,
+          price: "price_1234",
           quantity: 1,
         },
       ],
