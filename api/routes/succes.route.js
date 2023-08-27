@@ -3,6 +3,6 @@ import { successController } from "../controllers/success.controller.js";
 
 const router = express.Router();
 
-router.get("/", successController);
+router.post("/", successController);
 
 export default router;
