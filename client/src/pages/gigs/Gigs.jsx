@@ -25,8 +25,6 @@ function Gigs() {
         }),
   });
 
-  
-
   const reSort = (type) => {
     setSort(type);
     setOpen(false);
@@ -81,6 +79,7 @@ function Gigs() {
             ? "Something went wrong!"
             : data.map((gig) => <GigCard key={gig._id} item={gig} />)}
         </div>
+        {console.log(localStorage.getItem(currentUser.accessToken))}
       </div>
     </div>
   );

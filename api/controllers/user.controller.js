@@ -15,6 +15,12 @@ export const deleteUser = async (req, res, next) => {
 
 export const getUser = async (req, res, next) => {
   const user = await User.findById(req.params.id);
+  const authHeader = req.headers["authorization"];
+  if (authHeader) {
+    const token = authHeader.split(" ")[1];
+    req.token = token;
+    console.log("acessToken from getUser is ",token);
+  }
 
   res.status(200).send(user);
 };
