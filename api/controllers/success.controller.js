@@ -10,13 +10,17 @@ const router = express.Router();
 const stripe = new Stripe(process.env.STRIPE);
 
 export const successController = async (req, res, next) => {
-  const { items } = req.body; // Items you want to include in the checkout
+//   const { items } = req.body; // Items you want to include in the checkout
   try {
     const session = await stripe.checkout.sessions.create({
+      line_items: [
+        {
+          price: 1,
+          quantity: 1,
+        },
+      ],
       mode: "payment",
-      line_items: items,
-      success_url: "https://yourwebsite.com/success",
-      cancel_url: "https://yourwebsite.com/cancel",
+      success_url: "https://main--visionary-pothos-90879f.netlify.app/",
     });
     console.log(res);
     res.json({ sessionId: session.id });
