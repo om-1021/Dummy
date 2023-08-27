@@ -213,7 +213,7 @@ app.use("/api/conversations", conversationRoute);
 app.use("/api/messages", messageRoute);
 app.use("/api/reviews", reviewRoute);
 app.use("/api/send", sendRoute);
-app.use("/api/create-checkout-session",successRoute);
+app.use("/api/checkout", successRoute);
 
 app.use((err, req, res, next) => {
   const errorStatus = err.status || 500;
