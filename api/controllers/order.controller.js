@@ -17,6 +17,7 @@ export const intent = async (req, res, next) => {
       },
     });
 
+
     const existingOrder = await Order.findOne({ gigId: gig._id });
 
     if (existingOrder) {
@@ -41,7 +42,7 @@ export const intent = async (req, res, next) => {
       price: gig.price,
       payment_intent: paymentIntent.id,
     });
-
+    // stripe checkout session
     await newOrder.save();
 
     res.status(200).send({

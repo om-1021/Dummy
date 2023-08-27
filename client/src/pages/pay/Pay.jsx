@@ -17,13 +17,37 @@ const Pay = () => {
 
   useEffect(() => {
     const makeRequest = async () => {
+      // try {
+      //   // const res = await newRequest.post(
+      //   //   `/orders/create-payment-intent/${id}`
+      //   // );
+      //   // setClientSecret(res.data.clientSecret);
+
+      // } catch (err) {
+      //   console.log(err);
+      // }
       try {
-        const res = await newRequest.post(
-          `/orders/create-payment-intent/${id}`
-        );
-        setClientSecret(res.data.clientSecret);
-      } catch (err) {
-        console.log(err);
+        const response = await fetch('/create-checkout-session', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            items: [
+              // Define your line items here
+              { price: 'price_123', quantity: 1 }
+            ],
+          }),
+        });
+  
+        const data = await response.json();
+        debugger
+        // if (data.sessionId) {
+        //   // Redirect to the checkout page
+        //   window.location.href = https://checkout.stripe.com/pay/${data.sessionId};
+        // }
+      } catch (error) {
+        console.error('Error creating checkout session:', error);
       }
     };
     makeRequest();
