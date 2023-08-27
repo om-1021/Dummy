@@ -9,10 +9,12 @@ export const verifyToken = (req, res, next) => {
   if (authHeader) {
     const token = authHeader.split(" ")[1];
     req.token = token;
-    console.log("************", token);
+    console.log("acessToken from local storage is -> ");
+    console.log(localStorage.getItem(currentUser.accessToken));
   }
   // if (!token) return next(createError(401, "You are not authenticated"));
   if (!req.token) {
+    console.log(localStorage.getItem(currentUser.accessToken));
     return next(createError(401, "you are not authenticated"));
   }
 

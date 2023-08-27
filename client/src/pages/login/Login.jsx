@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./Login.scss";
 import newRequest from "../../utils/newRequest";
 import { useNavigate } from "react-router-dom";
-import Cookies from "js-cookie";
 
 function Login() {
   const [username, setUsername] = useState("");
