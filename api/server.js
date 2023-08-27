@@ -173,7 +173,7 @@ const connect = async () => {
 app.use((req, res, next) => {
   res.header(
     "Access-Control-Allow-Origin",
-    "https://64eb0d110ade1044ee35e3ab--poetic-entremet-2ece0c.netlify.app"
+    "https://main--visionary-pothos-90879f.netlify.app"
   );
   res.header("Access-Control-Allow-Credentials", "true");
   res.header(
@@ -186,8 +186,7 @@ app.use((req, res, next) => {
 
 app.use(
   cors({
-    origin:
-      "https://64eb0d110ade1044ee35e3ab--poetic-entremet-2ece0c.netlify.app",
+    origin: "https://main--visionary-pothos-90879f.netlify.app",
     credentials: true,
   })
 );
