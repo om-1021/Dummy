@@ -15,7 +15,7 @@ export const successController = async (req, res, next) => {
     const session = await stripe.checkout.sessions.create({
       line_items: [
         {
-          price: "price_1234",
+          price: "price_1NjmAlSFwnpGRs91N78Q2OaL",
           quantity: 1,
         },
       ],
