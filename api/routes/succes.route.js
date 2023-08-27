@@ -9,7 +9,7 @@ const router = express.Router();
 // app.use(json());
 const stripe = new Stripe(process.env.STRIPE);
 
-router.post("/checkout", async (req, res) => {
+router.post("/", async (req, res) => {
   const { items } = req.body; // Items you want to include in the checkout
   try {
     const session = await stripe.checkout.sessions.create({
