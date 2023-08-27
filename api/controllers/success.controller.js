@@ -13,13 +13,14 @@ export const successController = async (req, res, next) => {
   const { items } = req.body; // Items you want to include in the checkout
   try {
     const session = await stripe.checkout.sessions.create({
-      payment_method_types: ["card"],
+      mode: "payment",
       line_items: items,
       success_url: "https://yourwebsite.com/success",
       cancel_url: "https://yourwebsite.com/cancel",
     });
     console.log(res);
     res.json({ sessionId: session.id });
+    res.redirect(303, session.url);
   } catch (error) {
     console.log(error);
     next(error);
