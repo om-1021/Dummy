@@ -24,7 +24,7 @@ export const successController = async (req, res, next) => {
     });
     console.log("******************", res);
     // res.json({ sessionId: session.id });
-    res.redirect(303, session.url);
+    res.json({ url: session.url });
   } catch (error) {
     console.log(error);
     next(error);
