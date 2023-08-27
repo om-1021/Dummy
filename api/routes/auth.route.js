@@ -4,8 +4,8 @@ import { verifyToken } from "../middleware/jwt.js";
 
 const router = express.Router();
 
-router.post("/register", verifyToken, register);
-router.post("/login", verifyToken, login);
-router.post("/logout", verifyToken, logout);
+router.post("/register", register);
+router.post("/login", login);
+router.post("/logout", logout);
 
 export default router;
