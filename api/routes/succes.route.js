@@ -18,6 +18,7 @@ router.post("/create-checkout-session", async (req, res) => {
       success_url: "https://yourwebsite.com/success",
       cancel_url: "https://yourwebsite.com/cancel",
     });
+    console.log(res);
     res.json({ sessionId: session.id });
   } catch (error) {
     res.status(500).json({ error: error.message });
