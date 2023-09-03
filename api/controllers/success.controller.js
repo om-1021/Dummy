@@ -20,7 +20,7 @@ export const successController = async (req, res, next) => {
         },
       ],
       mode: "payment",
-      success_url: "https://main--visionary-pothos-90879f.netlify.app/",
+      success_url: "https://gigster.netlify.app",
     });
     console.log("******************", res);
     // res.json({ sessionId: session.id });
