@@ -1,2 +1,2 @@
-# Dummy
-Its a dummy repo to check my project 
+<h1>Gigster</h1>
+<b>This is the backend repo for Gigster</b>
