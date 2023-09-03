@@ -172,10 +172,7 @@ const connect = async () => {
   }
 };
 app.use((req, res, next) => {
-  res.header(
-    "Access-Control-Allow-Origin",
-    "https://main--visionary-pothos-90879f.netlify.app"
-  );
+  res.header("Access-Control-Allow-Origin", "https://gigster.netlify.app");
   res.header("Access-Control-Allow-Credentials", "true");
   res.header(
     "Access-Control-Allow-Headers",
@@ -187,7 +184,7 @@ app.use((req, res, next) => {
 
 app.use(
   cors({
-    origin: "https://main--visionary-pothos-90879f.netlify.app",
+    origin: "https://gigster.netlify.app",
     credentials: true,
   })
 );
