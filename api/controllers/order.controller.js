@@ -16,7 +16,7 @@ export const intent = async (req, res, next) => {
         enabled: true,
       },
     });
-
+    console.log("hello guys");
 
     const existingOrder = await Order.findOne({ gigId: gig._id });
 
